@@ -126,18 +126,26 @@ The result is: It created a smiley object and modify the pixel pattern using dra
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
 
-> Your answer here
->
+> The style works align with PEP 8, with the recommended naming Capital in class name, lower cases & snake_case in variables name, and triple-quoted docstrings, and # for comment
+> It is likely to be the same as the code style used in the SenseHat. Since the code integrated with SenseHat, it makes sense to follow the same code style to keep the consistence and readability.
 
 2. List three aspects of this convention you see applied in the code.
 
-> Your answer here
->
+> snake_case: e.g. draw_mouth
+> triple-quoted docstrings
+> use # to comment on code to keep it easy to understand
 
 3. Give two examples of organizational documentation in the code.
 
-> Your answer here
->
+> in smiley.py:
+>         """
+        Set the SenseHat's light intensity to low (True) or high (False)
+        :param dimmed: Dim the display if True, otherwise don't dim
+        """
+> in happy.py:
+>     """
+   Provides a Smiley with a happy expression
+    """
 
 ### 2.4. Identifying and understanding classes
 
@@ -149,17 +157,18 @@ The result is: It created a smiley object and modify the pixel pattern using dra
 
 | Class Name | Super or Sub? | Direct parent(s) |
 | ---------- | ------------- | ---------------- |
-| NotReal    | Sub           | NotRealParent    |
-|   ...      |   ...         |      ...         |
+| Smiley    | Super           |     |
+| Happy      | Sub         |   Smiley      |
+| Sad      | Sub         |   Smiley      |
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
-> Your answer here
+> Abstration means hiding the complex detail. It allows programmer to forcus on what it does than how it is done. For example, in happy.py, when a user wants to display the smiley face, it only needs to call the function show(), doesn't need to understand how the display can be presented. 
 >
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
-> Your answer here
+> Inheritance. if you inheritate from your parent/super class, the variables/functions defined in the superclass is pass to you (the child class) by default. The child class can use it without the need to create the function themselves as the code gets reused. 
 >
 
 ### 2.5. Compare and contrast classes
@@ -167,16 +176,16 @@ The result is: It created a smiley object and modify the pixel pattern using dra
 Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
-   > Your answer here
+   > Happy imported time and blinkable, Sad doesn't.  Happy has detailed documentation, but Sad doesn't.
    >
 2. What are the key similarities?
-   > Your answer here
+   > They both are the instance of Smiley and inherated draw_mouth and draw_eyes. 
    >
 3. What difference stands out the most to you and why?
-   > Your answer here
-   >
+   > In happy.py it import time and blinkable, but sad.py doesn't.
+   > It is the most obvious as it's on top of the file
 4. How does this difference affect the functionality of these classes
-   > Your answer here
+   > Sad face do not have blink function
    >
 
 ### 2.6. Where is the Sense(Hat) in the code?
