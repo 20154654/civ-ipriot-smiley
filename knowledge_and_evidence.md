@@ -70,51 +70,60 @@ python3 main.py
 
    | Type                    | name       | value          |
    | ----------              | ---------- | -------------- |
-   | built-in primitive type | _          |  _             |
-   | built-in composite type | _          |  _             |
-   | user-defined type       | _          |  _             |
+   | built-in primitive type | int        |  255         |
+   | built-in composite type | list       |  self.pixels   |
+   | user-defined type       | class      | Smiley         |
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
    | Object                   | Type                    |
    | ------------             | ----------------------- |
-   | self.pixels              | _                       |
-   | A member of self.pixels  | _                       |
-   | self                     | _                       |
+   | self.pixels              | built-in composite                   |
+   | A member of self.pixels  | built-in primitive                       |
+   | self                     | user-defined                      |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
    | Control Flow | File       | First line  | Line range  |
    | ------------ | ---------- | ----------- | ----------- |
-   |  sequence    |  _         | _           | _           |
-   |  selection   | _          | _           | _           |
-   |  iteration   | _          | _           | _           |
+   |  sequence    | smiley.py  |def __init__(self):  | 11-26       |
+   |  selection   | sad.py  | if wide_open:  | 26-29         |
+   |  iteration   | happy.py  | for pixel in mouth: | 21-22          |
 
-4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
+5. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
    | Type                    | Used? | Example |
    | ----------------------- | ----- | --------|
-   | int                     | _     | _          |
-   | float                   | _     | _          |
-   | str                     | _     | _          |
-   | bool                    | _     | _          |
+   | int                     | Y   | WHITE=(255,255,255)|
+   | float                   | N     | pi=3.14         |
+   | str                     | N     | face='SAD'       |
+   | bool                    | Y  |dimmed=True   |
 
-5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
+6. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
 > Your answer here
->
+> [ Class Variable ]: WHITE = (255,255,255)
+> it defined in the Class, not in a method. All Smiley instances will share the same color constant. No matter how many Smiley instance you created, WHITE is always (255,255,255)
+> Instance Variable:self.pixels = []
+> It defined inside each individual object created from this class. Each Smiley instance can have their own pixels pattern
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
    > Your answer here
-   >
+   > [ in general ] to initialize the object's state, setup instance variables and give them starting values.
+   > [ in particular ] to create and store SenseHat object
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
-   > Your answer here
-   >
+   > super().__init__()  --> this takes it to smiley.py's __init__
+         > self.sense_hat = SenseHat()
+         > set colour instances: Y and O
+         > self.pixels = [xxxxxx]  --> initializes self.pixels
+   > self.draw_mouth()
+   > self.draw_eyes()
 
+The result is: It created a smiley object and modify the pixel pattern using draw_mouth and draw_eyes methods.
 ### 2.3. Code style
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
