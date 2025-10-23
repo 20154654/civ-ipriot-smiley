@@ -101,7 +101,6 @@ python3 main.py
 
 6. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> Your answer here
 > [ Class Variable ]: WHITE = (255,255,255)
 > it defined in the Class, not in a method. All Smiley instances will share the same color constant. No matter how many Smiley instance you created, WHITE is always (255,255,255)
 > Instance Variable:self.pixels = []
@@ -110,7 +109,6 @@ python3 main.py
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
-   > Your answer here
    > [ in general ] to initialize the object's state, setup instance variables and give them starting values.
    > [ in particular ] to create and store SenseHat object
 
