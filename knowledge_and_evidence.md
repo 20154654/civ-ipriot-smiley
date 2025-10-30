@@ -197,8 +197,12 @@ Compare and contrast the classes Happy and Sad.
    > Smiley
    >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > Your answer here
-   >
+   > Class Smiley encapsulated the SenseHat object, all the functionalities in SenseHat is accesable via Smiley.
+   > In Smiley, you only use self.sense_hat = SenseHat() and all the SenseHat functionalities is not defined here.
+   > But Smiley can access the function/method in it's class. E.g. self.sense_hat.low_light and self.sense_hat.set_pixels(self.pixels)
+   > Class Sad and Happy inheritated from Smiley but they cannot directly use SenseHat's object as it's hidden inside Smiley.
+   > If Sad and Happy wants to use the functoin provided by SenseHat, they have to use the function defined in Smiley to indirectly access it.
+   > e.g. show() and dim_display()
 
 ### 2.7. Sad Smileys Can’t Blink (Or Can They?)
 
@@ -208,22 +212,24 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
-> Your answer here
+> No, the author doesn't think that every 'Smiley' should be able to blink as Blink method is not defined in Smiley class.
 >
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> Your answer here
+> Yes, for the smileys that blink, the author expect them to blink in the same way as it defined the method blink() in Blinkable.
 >
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
-> Your answer here
->
+> Polymorphism allows the same method (inheritaed from superclass) to behave differnetly, so that each object can implemente it in its own way.
+> Currently Sad Smiley has no blinkable implemented, but if it does, it can define it's own way to blink which can be different from tie subclass or Happy.
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
-> Your answer here
+> Happy inherited from Blinkable so it also inherites the blink() method. If Sad also inherited Blinkable, it will also inherite blink() method.
+> Happy and Sad will both have blink() method, but they can override the behaviour for their own blink method.
+> Inheritance provides the shared method, and polymorphism allows different smiley objects to be treated uniformly via that method.
 >
 1. **Implement Blink in Sad Class:**
 
