@@ -4,9 +4,9 @@ from blinkable import Blinkable
 
 
 
-class Sad(Smiley):
+class Angry(Smiley):
     def __init__(self, complexion=None):
-        super().__init__(complexion=self.BLUE)
+        super().__init__(complexion=self.RED)
 
         self.draw_mouth()
         self.draw_eyes()
@@ -15,7 +15,7 @@ class Sad(Smiley):
         """
         Draws the mouth feature on a smiley
         """
-        mouth = [49, 54, 42, 43, 44, 45]
+        mouth = [42, 43, 44, 45]
         for pixel in mouth:
             self.pixels[pixel] = self.BLANK
 
