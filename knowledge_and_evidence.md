@@ -292,19 +292,21 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
-     2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
-     3. Add the color blue to the appropriate class using the appropriate format and values.
+        Colour YELLOW is defined in class Smiley.
+        In sense_hat.py  it is also defined in tuples (DEFAULT_RGB).
+     3. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
+        The colour is defined in tuple. As tuple is immutable, the value is not expected to change. 
+     4. Add the color blue to the appropriate class using the appropriate format and values.
+        BLUE = (0, 0, 255)
 
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        The color variables are used in Smiley, Happy and Sad.
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     > Y = self.BLUE in def __init__(self) in Smiley
 
 
 
@@ -334,7 +336,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
-  ![Bulk Rename](screenshots/bulk_rename.png)
+  ![Bulk Rename](screenshots/replaceFunction.png)
 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 
