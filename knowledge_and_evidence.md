@@ -252,7 +252,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  There is no issues whenrunning the code for the Sad smiley to blink. But the shape of its mouth doesn't look too good when linked to the two dark pixel on the bottom left and right. Looks like a very big mouth sad face. 
 
   ### 2.8. If It Walks Like a Duck…
 
@@ -260,24 +260,27 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Class Type Analysis:** What kind of class is `Blinkable`? Inspect its superclass for clues about its classification.
 
-     > Your answer here
+    Blinkable is an abstract base class (ABC) as it inherits from ABC.
+    It is a kind of interface-like class and defines a contract that all subclasses must fulfill.
+    (Any subclass of Blinkable must implement a blink() method before it can be instantiated. 
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Your answer here
+  Blinkable is an interface, it only specifies what subclasses must do (via @abstractmethod) adn doesn't implement anything itself. 
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > Your answer here
+  This represent Abstraction.
+  It defines what behaviour subclass must provide without specifying how it should be done. Hiding implementation details and exposing only the essential interface.
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Your answer here
-
+  Python focuses on what an object can do, not what it inherits from. So as long as Sad Smiley defines a blink() method that behaves like the one in Happy Smiley, it can be treated as blinkable. 
+  
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
-  > Your answer here
-
+  This capability is known as duck typing.
+  Duck typing allows an object's suitability to be determined by whether it has the required methods or behaviour.
   ***
 
   ## 3. Refactoring
